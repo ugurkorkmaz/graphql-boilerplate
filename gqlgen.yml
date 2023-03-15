@@ -1,0 +1,23 @@
+schema: "schema/*.gql"
+
+exec:
+  filename: gen/exec.go
+  package: gen
+
+model:
+  filename: model/models.go
+  package: model
+
+resolver:
+  layout: follow-schema
+  dir: resolver
+  package: resolver
+  filename_template: "{name}.go"
+
+autobind:
+#  - "app/model"
+
+models:
+  ID:
+    model:
+      - app/types/id.UUID
