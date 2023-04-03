@@ -7,22 +7,11 @@ import (
 )
 
 type CreateTodoInput struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
-}
-
-type CreateUserInput struct {
-	Name string `json:"name"`
+	Text string `json:"text"`
 }
 
 type Todo struct {
 	ID   uuid.UUID `json:"id"`
 	Text string    `json:"text"`
 	Done bool      `json:"done"`
-	User *User     `json:"user"`
-}
-
-type User struct {
-	ID   uuid.UUID `json:"id"`
-	Name string    `json:"name"`
 }

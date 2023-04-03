@@ -20,4 +20,4 @@ autobind:
 models:
   ID:
     model:
-      - app/types/id.UUID
+      - app/service/types/id.UUID
