@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Svelte + TS</title>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <gqlgen id="gql" data-props="" />
+    <script>
+      const data = {
+        title: "GrqphQL Boilerplate App",
+        description: "A boilerplate app for GraphQL",
+      };
+      document
+        .getElementById("gql")
+        .setAttribute("data-props", JSON.stringify(data));
+    </script>
+    <script type="module" src="/src/main.ts" defer></script>
   </body>
 </html>
