@@ -253,6 +253,7 @@ var sources = []*ast.Source{
   text: String!
   done: Boolean!
 }
+
 extend type Query {
   todos: [Todo!]!
 }
