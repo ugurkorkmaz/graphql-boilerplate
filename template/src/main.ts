@@ -1,4 +1,4 @@
-import "./style/reset.css";
+import "./app.postcss";
 import App from "./App.svelte";
 
 const gqlgen = Array.from(document.getElementsByTagName("gqlgen"));
