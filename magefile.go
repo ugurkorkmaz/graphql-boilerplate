@@ -1,10 +1,7 @@
 //go:build mage
 // +build mage
 
-/*
-This is a magefile.  It can be used to run any build related tasks
-in a reproducible way.  See https://magefile.org for more info.
-*/
+// GraphQL Boilerplate for Fullstack
 package main
 
 import (
@@ -15,26 +12,23 @@ import (
 	"github.com/magefile/mage/mg" // mg contains helpful utility functions, like Deps
 )
 
-// Default target to run when none is specified
-// If not set, running mage will list available targets
-// var Default = Build
-
-// A build step that requires additional params, or platform specific steps for example
+// compiles the binary
 func Build() error {
-	mg.Deps(InstallDeps, Gqlgen, Frontend)
+	mg.Deps(Install, Frontend)
 	fmt.Println("Building...")
 	cmd := exec.Command("go", "build", "-o", "app", ".")
 	return cmd.Run()
 }
 
-// Manage your deps, or running package managers.
-func InstallDeps() error {
-	fmt.Println("Installing Deps...")
+// dependencies for the gomod
+func Install() error {
+	// Colorize the output
+	fmt.Println("Installing dependencies...")
 	cmd := exec.Command("go", "mod", "tidy")
 	return cmd.Run()
 }
 
-// Generate gqlgen
+// generates code from graphql schema
 func Gqlgen() error {
 	fmt.Println("Generating gqlgen...")
 	// gqlgen generate, See https://gqlgen.com/getting-started/
@@ -42,24 +36,32 @@ func Gqlgen() error {
 	return cmd.Run()
 }
 
-// Generate templates for the frontend
+// builds the frontend templates
 func Frontend() error {
 	fmt.Println("Generating templates...")
-	fmt.Println("Frontend framework installation or build steps here...")
-	return nil
-}
-
-// Watch for changes and rebuild the project automatically
-func Watch() error {
-	fmt.Println("Starting air...")
-	// air, See https://github.com/cosmtrek/air#usage
-	cmd := exec.Command("go", "run", "github.com/cosmtrek/air@latest")
+	// npm build --prefix templates
+	cmd := exec.Command("npm", "run", "build", "--prefix", "template")
 	return cmd.Run()
 }
 
-// Clean up after yourself
-func Clean() {
+// runs the binary
+func Run() error {
+	fmt.Println("Running...")
+	cmd := exec.Command("go", "run", ".")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
+}
+
+// project tests and lints
+func Test() error {
+	fmt.Println("Testing...")
+	cmd := exec.Command("go", "test", "./...")
+	return cmd.Run()
+}
+
+// Clean removes the binary
+func Clean() error {
 	fmt.Println("Cleaning...")
-	// Remove the binary
-	os.RemoveAll("app")
+	return os.Remove("app")
 }
