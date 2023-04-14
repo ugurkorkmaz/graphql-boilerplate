@@ -1,21 +1,20 @@
 # Security Policy
 
-## Supported Versions
-
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
-
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability within our project, please send an email to [security@ugurkorkmaz.net](mailto:git+security@ugurkorkmaz.net). All security vulnerabilities will be promptly addressed.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Please do not report security vulnerabilities through public GitHub issues.
+
+## Supported Versions
+
+We will only provide security updates to the latest minor version of the project. It is recommended that you upgrade to the latest minor version to receive the latest security updates.
+
+## Vulnerability Disclosure Policy
+
+When we receive a security vulnerability report, we will take the following steps:
+
+- Confirm the vulnerability and determine its scope
+- Create fixes for all supported versions
+- Notify all affected users and provide instructions on how to apply fixes
+- Publish a security bulletin on our website
