@@ -1,9 +1,10 @@
 package resolver
 
 import (
+	"context"
+
 	"app/gen"
 	"app/model"
-	"context"
 
 	"github.com/google/uuid"
 )
@@ -73,6 +74,8 @@ func (r *Resolver) Query() gen.QueryResolver { return &queryResolver{r} }
 // Subscription returns gen.SubscriptionResolver implementation.
 func (r *Resolver) Subscription() gen.SubscriptionResolver { return &subscriptionResolver{r} }
 
-type mutationResolver struct{ *Resolver }
-type queryResolver struct{ *Resolver }
-type subscriptionResolver struct{ *Resolver }
+type (
+	mutationResolver     struct{ *Resolver }
+	queryResolver        struct{ *Resolver }
+	subscriptionResolver struct{ *Resolver }
+)

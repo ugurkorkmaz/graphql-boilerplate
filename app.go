@@ -1,11 +1,12 @@
 package main
 
 import (
-	"app/resolver"
-	"app/template"
 	"context"
 	"net/http"
 	"time"
+
+	"app/resolver"
+	"app/template"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/extension"
@@ -45,7 +46,6 @@ func init() {
 }
 
 func main() {
-
 	// Add middleware
 	_chi.Use(middleware.Logger, GlobalContext)
 
