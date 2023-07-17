@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"app/resolver"
-	"app/template"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/extension"
@@ -82,11 +81,8 @@ func main() {
 	_chi.Group(func(r chi.Router) {
 		_chi.Handle("/graphql", _gql)
 		_chi.Handle("/websocket", _gql)
-		_chi.Handle("/playground", playground.Handler(name, "/graphql"))
+		_chi.Handle("/", playground.Handler(name, "/graphql"))
 	}).Use(Secret)
-
-	// Serve static files
-	_chi.Handle("/*", template.Dist())
 
 	http.ListenAndServe(port, _chi)
 }
