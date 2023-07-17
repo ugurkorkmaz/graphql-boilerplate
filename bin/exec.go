@@ -9,9 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var (
-	appPort string
-)
+var appPort string
 
 func init() {
 	// Load environment variables from .env file
