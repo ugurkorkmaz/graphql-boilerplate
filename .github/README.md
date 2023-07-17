@@ -62,11 +62,6 @@ Run commands
 - [@ugurkorkmaz](https://www.github.com/ugurkorkmaz)
 
 
-## License
-
-[MIT](https://github.com/ugurkorkmaz/graphql-boilerplate/blob/main/LICENSE)
-
-
 ## Contributing
 
 Contributions are always welcome!
