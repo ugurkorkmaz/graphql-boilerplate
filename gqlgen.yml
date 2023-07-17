@@ -1,7 +1,7 @@
 schema: "schema/*.gql"
 
 exec:
-  filename: gen/exec.go
+  filename: gen/gqlgen.go
   package: gen
 
 model:
