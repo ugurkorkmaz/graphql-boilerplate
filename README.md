@@ -8,19 +8,7 @@ This boilerplate is built using Golang, Chi and Gqlgen, providing a scalable and
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`APP_NAME`
-
-`APP_PORT`
-
-`APP_SECRET_KEY`
-
-`APP_SECRET_HEADER_NAME`
-
-`APP_DEBUG`
-
-`GQL_COMPLEXITY_LIMIT`
-
-
+`APP_NAME`,`APP_PORT`,`APP_SECRET_KEY`,`APP_SECRET_HEADER_NAME`,`APP_DEBUG`,`GQL_COMPLEXITY_LIMIT`
 
 ## Run Locally
 
@@ -56,23 +44,11 @@ Run commands
 
 ## API Reference
 
-#### Playground
-
-| Path | Description |
-| --- | --- |
-| `/` | Serves the Playground UI for interacting with the GraphQL API. |
-
-#### GraphQL Api
-
 | Path | Description |
 | --- | --- |
 | `/graphql` | Handles GraphQL requests and serves the GraphQL API. |
-
-#### WebSocket
-
-| Path | Description |
-| --- | --- |
 | `/websocket` | Handles WebSocket connections for real-time communication with the GraphQL API. |
+| `/` | Serves the Playground UI for interacting with the GraphQL API. |
 
 
 
@@ -94,7 +70,3 @@ Run commands
 ## Contributing
 
 Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
